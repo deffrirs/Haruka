@@ -486,16 +486,13 @@ const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
 //colong aja bang, ingat jgn asal colong ntr sc lu error
 switch (command) {
 case 'menu': case 'help': case 'haruka':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
 				break
 case 'infobot':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			reply('INFO Cek Di Youtube DEFFBOTz')
 break
 case 'owner':{
-	if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-		const ownerContact = [ownernumber, "", "", "", "", "", "", "", "", "", "" , "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+			const ownerContact = [ownernumber, "", "", "", "", "", "", "", "", "", "" , "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 		let ini_list = []
 		for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
 			const vname = haruka.contacts[i] != undefined ? haruka.contacts[i].vname || haruka.contacts[i].notify : undefined
@@ -512,16 +509,13 @@ case 'owner':{
 				}
 			break
 			case 'sewa': case 'sewabot': 
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 				sendButLocation(from, lang.sewabot(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
 				break
 			case 'tiktok':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '© ' + ownername, thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
 						
              break
 case 'sticker':case 'stiker':case 'stickergif':case 'stikergif':case 'sgif':case 's':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 			const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 			const media = await haruka.downloadAndSaveMediaMessage(encmedia)
@@ -577,7 +571,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 					
 // download fix by zeeone
 case 'ig': case 'igdl': 
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 	if (!q) return reply('Linknya?')
 	if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.errorLink)
 	let urlnya = q
@@ -596,11 +589,9 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
             
              break
 case 'script': case 'sc': case 'harukasc':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 				sendButLocation(from, lang.script(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
 				break
 case 'tiktoknowm':   
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!q) return reply('Linknya?')
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
 			reply(lang.wait())
@@ -618,7 +609,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 			
              break 
 case 'tiktokwm':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!q) return reply('Linknya?')
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
 			reply(lang.wait())
@@ -636,7 +626,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 			
              break 
 case 'tiktokmusic': case 'tiktokaudio':  
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!q) return reply('Linknya?')
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
 			reply(lang.wait())
@@ -653,8 +642,7 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 			
              break
              case 'playstore':
-    if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-            if(!q) return reply('lu nyari apa?')
+                if(!q) return reply('lu nyari apa?')
             let play = await hx.playstore(`${q}`)
             let store = '❉─────────────────────❉\n'
             for (let i of play){
@@ -666,8 +654,35 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
             }
             reply(store)
             break
+            case 'ytsearch':
+                         if (!args.length) return reply('Judulnya apa kak?')
+            try {
+            	sticWait(from)
+                const input = args.join(" ")
+                const filter1 = await ytsd.getFilters(input)
+                const filters1 = filter1.get('Type').get('Video')
+                const { items } = await ytsd(filters1.url, { limit: 10 })
+                let hehe = `*🔖 YOUTUBE SEARCH*
+*🔖 Search Query:* ${input}\n\n`
+                for (let i = 0; i < items.length; i++) {
+                    hehe += `───────────────\n
+*🔖 Judul:* ${items[i].title}
+*🔖 Id:* ${items[i].id}
+*🔖 Ditonton:* ${items[i].views}
+*🔖 Durasi:* ${items[i].duration}
+*🔖 Link:* ${items[i].url}\n\n`
+                }
+                thumb = await getBuffer(items[0].bestThumbnail.url)
+                await haruka.sendMessage(from, thumb, image, {quoted: ftrol, caption: `${hehe}───────────────\n
+*🔖 DOWNLOAD*
+🔖 ${prefix}ytmp3 [link yt] = Audio
+🔖 ${prefix}ytmp4 [link yt] = Video`, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:`SEARCH: ${args[0]}`,body:"🔖YOUTUBE SEARCH",mediaType:"2",thumbnail:pporigi,mediaUrl:`https://youtu.be/p2sWnPcTdB4`}}})
+            } catch(e) {
+                reply('Didn\'t find anything or there is any error!')
+                reply(`Error: ${e.message}`)
+            }
+            break
 case 'pinterest': 
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if(!q) return reply('Masukkan query')
             async function pinterestSearch(query) {
                     return new Promise((resolve, reject) => {
@@ -720,7 +735,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
                 
              break
 case 'play': case 'song':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu_`)
 			var srch = args.join(' ')
 			aramas = await yts(srch);
@@ -759,7 +773,6 @@ case 'daftar': case 'verify': case 'verif':
 			await sendButImage(from, lang.daftar(sender, pushname, time, serialUser, _registered), `© ${botname}`,await getBuffer(ppregis), [{buttonId: '.menu',buttonText: {displayText: `MENU`,},type: 1,}], {thumbnail: Buffer.alloc(0), quoted : mek})
 break
 case 'antilink':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
@@ -827,7 +840,6 @@ case 'leave':
 			}, 0)
 			break
 case 'hidetag':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			var value = q
@@ -845,7 +857,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 			haruka.sendMessage(from, options, text)
 			break
 case 'linkgrup':case 'linkgroup': case 'linkgc':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			linkgc = await haruka.groupInviteCode(from)
 			yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
@@ -866,7 +877,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 		}
 			  break
 case 'tagall':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			members_id = []
@@ -879,7 +889,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 			mentions(taga, members_id, true)
 			break 
 case 'setname':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
@@ -887,7 +896,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 					haruka.sendMessage(from, `Sukses Mengubah Nama Grup Menjadi ${q}`, text, { quoted: mek })
 			break          
 case 'setdesc': case 'setdesk':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
@@ -909,7 +917,6 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 					}
 					break
 case 'kick':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
