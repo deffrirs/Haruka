@@ -61,18 +61,68 @@ exports.leave = () =>{
 │
 ╰─ ᝬ _Balik Lagi Wajib Donasi Ya_ >_<`
 }
+exports.sewabot = (prefix, salam, pushname) =>{
+	return`Hi ${pushname}, selamat ${salam}
+	
+「 *OPEN JASA SEWA BOT* 」
+							
+⬣ *HARGA SEWA BOT*
+
+⬡ 1 MINGGU = Rp 10.000,00
+⬡ 2 MINGGU = Rp 15.000,00
+⬡ 3 MINGGU = Rp 20.000,00
+⬡ 1 BULAN = Rp 30.000,00
+⬡ PERMANEN = Rp 50.000,00
+
+「*FITUR MENARIK*」
+⬣ _Menu stiker_✔️
+⬣ _sticker meme_✔️
+⬣ _All menu download_✔️
+⬣ _*Dan Banyak Lagi Fitur Nya*_
+
+⬣ *PRICE JADIBOT*
+Fitur Jadi Bot Juga Tersedia Dan BOT Dijamin Run Otomatis 24jam no delay Tergantung Klw Nomor Ga terbanned.
+
+_Dibawah Berikut Harga Jadi BOT_
+
+⬡ JADI BOT 1 Bulan 10K
+⬡ Jadi BOT 2  Bulan 20k
+⬡ Jadi BOT PERMANEN 25K
+
+⬣ MINAT? PM
+⬡ wa.me/6282132805286
+
+
+NOTE : 
+Bot On 24 Jam Karna Di Run Menggunakan Heroku
+Reset Data Setiap Jam 02:00
+}
+exports.script = (prefix, salam, pushname) =>{
+	return`Hi ${pushname}, selamat ${salam}
+	
+	╭─❒ SCRIPT
+│◦➛Base : zeeone ofc
+│◦➛Recode : Deffri Gans
+│
+└──────[ GITHUB ]──────❒
+  │◦➛Script Ory :
+  │◦➛zeeone ofc
+  │◦➛Script Recode : 
+  │◦➛Ntar Di Rillis
+  └──────────────────❒`
+}
 exports.menu = (prefix, salam, pushname) =>{
 	return`Hi ${pushname}, selamat ${salam}
 
 ╭─⬣ *List Menu*
 │ ➤ ${prefix}menu
 │ ➤ ${prefix}help
-│ ➤ ${prefix}haruka
 │
 ├ *Download*
 │ ➤ ${prefix}play [query]
 │ ➤ ${prefix}song [judul lagu]
 │ ➤ ${prefix}pinterest [query]
+│ ➤ ${prefix}playstore [query]
 │ ➤ ${prefix}ytmp3 [url]
 │ ➤ ${prefix}ytmp4 [url]
 │ ➤ ${prefix}tiktok [url]
@@ -107,6 +157,8 @@ exports.menu = (prefix, salam, pushname) =>{
 ├ *Info*
 │ ➤ ${prefix}owner
 │ ➤ ${prefix}daftar
+│ ➤ ${prefix}sc
+│ ➤ ${prefix}sewabot
 │
 ├ *Owner*
 │ ➤ ${prefix}broadcast [text]
@@ -120,6 +172,7 @@ exports.menu = (prefix, salam, pushname) =>{
 │ ➤ ${prefix}hidetag [text]
 │ ➤ ${prefix}linkgrup
 │ ➤ ${prefix}tagall
+│ ➤ ${prefix}add @tag
 │ ➤ ${prefix}kick @tag
 │ ➤ ${prefix}setdesc [text] 
 │ ➤ ${prefix}setname [text] 
