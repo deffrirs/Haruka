@@ -511,6 +511,15 @@ case 'owner':{
 					haruka.sendMessage(from, `Nih Kak Contact Owner Ku, Cuma Sv Nomor Cewe Ya 🤝`, text, {quoted: hehe})
 				}
 			break
+			case 'sewa': case 'sewabot': 
+if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+				sendButLocation(from, lang.sewabot(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
+				break
+			case 'tiktok':
+if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '© ' + ownername, thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
+						
+             break
 case 'sticker':case 'stiker':case 'stickergif':case 'stikergif':case 'sgif':case 's':
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
@@ -586,11 +595,10 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
             }).catch((err) => reply(`🤲 Server eror`))
             
              break
-case 'tiktok':
+case 'script': case 'sc': case 'harukasc':
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '© ' + ownername, thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
-						
-             break
+				sendButLocation(from, lang.script(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
+				break
 case 'tiktoknowm':   
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!q) return reply('Linknya?')
@@ -644,6 +652,20 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 				}).catch((err) => reply(`Link tidak valid`))
 			
              break
+             case 'playstore':
+    if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+            if(!q) return reply('lu nyari apa?')
+            let play = await hx.playstore(`${q}`)
+            let store = '❉─────────────────────❉\n'
+            for (let i of play){
+            store += `\n*「 *PLAY STORE* 」*\n
+- *Nama* : ${i.name}
+- *Link* : ${i.link}\n
+- *Dev* : ${i.developer}
+- *Link Dev* : ${i.link_dev}\n❉─────────────────────❉`
+            }
+            reply(store)
+            break
 case 'pinterest': 
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if(!q) return reply('Masukkan query')
@@ -829,6 +851,20 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 			yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
 			haruka.sendMessage(from, yeh, text, { quoted: mek })
 			break  
+			case 'getpp':
+					anu = from
+		if (`${anu}@s.whatsapp.net`) {
+		try {
+					ppimg = await haruka.getProfilePicture(anu)
+				} catch {
+					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+				}
+				ano = await haruka.getProfilePicture(anu)
+				buffer = await getBuffer(ano)
+				haruka.sendMessage(from, buffer, image, {quoted: mek})
+		} else {
+		}
+			  break
 case 'tagall':
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
@@ -858,6 +894,20 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 					await haruka.groupUpdateDescription(from, `${q}`)
 					haruka.sendMessage(from, `Sukses Mengubah Desk Grup Menjadi ${q}`, text, { quoted: mek })
 			break   
+			case 'add':
+			if (!isGroup) return reply(lang.group())
+			if (!isGroupAdmins) return reply(lang.admin(groupName))
+			if (!isBotGroupAdmins) return reply(lang.adminB())
+					if (args.length < 1) return reply('Yang mau di add jin ya? contoh .add 628...')
+					if (args[0].startsWith('08')) return reply('Gunakan kode negara mas contoh : 628..')
+					try {
+						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
+						haruka.groupAdd(from, [num])
+					} catch (e) {
+						console.log('Error :', e)
+						reply('Gagal menambahkan target, mungkin karena di private')
+					}
+					break
 case 'kick':
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
@@ -868,24 +918,47 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 			await haruka.groupRemove(from, [kickya])
 			reply(`Succses kick target!`)
 break
-case 'bc': case 'broadcast':
-			if (!isOwner) return reply(lang.owner(botname))
-			if (args.length === 0) return reply(`Kirim perintah *${prefix + command}* text`)
-			var bcnya = await haruka.chats.all()
-			if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-			var  bcnya2 = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-			var bcnya3 = await haruka.downloadMediaMessage(bcnya2)
-					for (let _ of bcnya) {
-						haruka.sendMessage(_.jid, bcnya3, image, { caption: `*----「  BROADCAST 」----*\n\n${q}` })
+case 'bc':
+					haruka.updatePresence(from, Presence.composing)
+					if (!isOwner && !mek.key.fromMe) return sticOwner(from)
+					if (args.length < 1) return reply('Teksnya?')
+					anu = await haruka.chats.all()
+					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await haruka.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							haruka.sendMessage(_.jid, buff, image, { viewOnce:true, caption: `${body.slice(4)}`})
 						}
-						reply('Sukses broadcast')
+						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
+						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await haruka.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							haruka.sendMessage(_.jid, buff, video, { viewOnce:true, caption: `${body.slice(4)}`})
+						}
+						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
+						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await haruka.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							haruka.sendMessage(_.jid, buff, video, { mimetype: Mimetype.gif, quoted: finv, contextInfo: { forwardingScore: 508, isForwarded: true}, caption: `${body.slice(4)}` })
+						}
+						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
 					} else {
-						for (let _ of bcnya) {
-							haruka.sendMessage(_.jid, `*----「  BROADCAST 」----*\n\n${q}`)
+						for (let _ of anu) {
+							//sendMess(_.jid, `${body.slice(4)}`)
+buttons = [{buttonId: `menu`, buttonText: {displayText: 'MENU📑'}, type: 1},{buttonId: `owner`, buttonText: {displayText: 'OWNER👤'}, type: 1}]
+const btnbc = {
+    contentText: `${body.slice(4)}`,
+    footerText: '*_BROADCAST_*',
+    buttons: buttons,
+    headerType: 1
+}
+await haruka.sendMessage(_.jid, btnbc, MessageType.buttonsMessage, {quoted: ftrol})
 						}
-						reply('Sukses broadcast')
+						reply(`Sukses mengirim Broadcast:\n${body.slice(4)}`)
 					}
-					break      
+					break
 case 'nightcore':{
 	                 if (!isQuotedAudio) return reply('Reply audio nya om')
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
