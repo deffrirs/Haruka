@@ -68,9 +68,9 @@ exports.sewabot = (prefix, salam, pushname) =>{
 							
 ⬣ *HARGA SEWA BOT*
 
-⬡ 1 MINGGU = Rp 10.000,00
-⬡ 2 MINGGU = Rp 15.000,00
-⬡ 3 MINGGU = Rp 20.000,00
+⬡ 1 MINGGU = Rp 5.000,00
+⬡ 2 MINGGU = Rp 10.000,00
+⬡ 3 MINGGU = Rp 15.000,00
 ⬡ 1 BULAN = Rp 30.000,00
 ⬡ PERMANEN = Rp 50.000,00
 
@@ -95,7 +95,7 @@ _Dibawah Berikut Harga Jadi BOT_
 
 NOTE : 
 Bot On 24 Jam Karna Di Run Menggunakan Heroku
-Reset Data Setiap Jam 02:00
+Reset Data Setiap Jam 02:00`
 }
 exports.script = (prefix, salam, pushname) =>{
 	return`Hi ${pushname}, selamat ${salam}
